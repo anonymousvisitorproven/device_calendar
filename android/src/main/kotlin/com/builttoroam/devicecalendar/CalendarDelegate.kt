@@ -946,6 +946,9 @@ class CalendarDelegate(binding: ActivityPluginBinding?, context: Context) :
         val eventColorKey = cursor.getInt(Cst.EVENT_PROJECTION_EVENT_COLOR_KEY_INDEX)
         val recurrenceExceptionDate = cursor.getString(Cst.EVENT_PROJECTION_EVENT_RECURRENCE_EXCEPTION_DATE)
         val recurrenceExceptionRule = cursor.getString(Cst.EVENT_PROJECTION_EVENT_RECURRENCE_EXCEPTION_RULE)
+        val originalId = cursor.getString(Cst.EVENT_PROJECTION_EVENT_ORIGINAL_ID)
+        val originalSyncId = cursor.getString(Cst.EVENT_PROJECTION_EVENT_ORIGINAL_SYNC_ID)
+        val recurrenceDate = cursor.getString(Cst.EVENT_PROJECTION_RECURRENCE_DATE)
 
         val event = Event()
         event.eventTitle = title ?: "New Event"
@@ -966,6 +969,9 @@ class CalendarDelegate(binding: ActivityPluginBinding?, context: Context) :
         event.eventColorKey = if (eventColorKey == 0) null else eventColorKey
         event.recurrenceExceptionDate = recurrenceExceptionDate
         event.recurrenceExceptionRule = recurrenceExceptionRule
+        event.originalSyncId = originalSyncId
+        event.originalId = originalId
+        event.recurrenceDate = recurrenceDate
 
         return event
     }

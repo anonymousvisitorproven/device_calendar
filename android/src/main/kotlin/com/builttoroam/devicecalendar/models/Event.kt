@@ -22,4 +22,7 @@ class Event {
     var eventColorKey: Int? = null
     var recurrenceExceptionDate: String? = null
     var recurrenceExceptionRule: String? = null
+    var originalId: String? = null
+    var originalSyncId: String? = null
+    var recurrenceDate: String? = null
 }

@@ -1,7 +1,6 @@
 import 'dart:io';
 
 import 'package:collection/collection.dart';
-import 'event_color.dart';
 
 import '../../device_calendar.dart';
 import '../common/error_messages.dart';
@@ -58,6 +57,9 @@ class Event {
 
   String? recurrenceExceptionDate;
   String? recurrenceExceptionRule;
+  String? originalId;
+  String? originalSyncId;
+  String? recurrenceDate;
 
   ///Note for development:
   ///
@@ -86,6 +88,9 @@ class Event {
     this.status,
     this.recurrenceExceptionDate,
     this.recurrenceExceptionRule,
+    this.originalSyncId,
+    this.originalId,
+    this.recurrenceDate,
   });
 
   ///Get Event from JSON.
@@ -161,6 +166,9 @@ class Event {
     status = parseStringToEventStatus(json['eventStatus']);
     recurrenceExceptionDate = json['recurrenceExceptionDate'];
     recurrenceExceptionRule = json['recurrenceExceptionRule'];
+    originalId = json['originalId'];
+    originalSyncId = json['originalSyncId'];
+    recurrenceDate = json['recurrenceDate'];
 
     foundUrl = json['eventURL']?.toString();
     if (foundUrl?.isEmpty ?? true) {
