@@ -21,5 +21,5 @@ class Event {
     var eventColor: Int? = null
     var eventColorKey: Int? = null,
     var recurrenceExceptionDate: String? = null,
-    var recurrenceExceptionRule: String? = null,
+    var recurrenceExceptionRule: String? = null
 }
