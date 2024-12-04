@@ -19,5 +19,7 @@ class Event {
     var availability: Availability? = null
     var eventStatus: EventStatus? = null
     var eventColor: Int? = null
-    var eventColorKey: Int? = null
+    var eventColorKey: Int? = null,
+    var recurrenceExceptionDate: String? = null,
+    var recurrenceExceptionRule: String? = null,
 }
